@@ -1,0 +1,16 @@
+User Model 
+----------
+id: integer
+email: string
+name: string
+password: hashed
+
+To Do: 
+- write out the model for my User
+- implement middleware to hash username/password on login
+-implement middleware to check hashed password on login 
+- write middleware to check for user being logged in 
+- create the EJS templates for login and register 
+- create our db o hold our user table 
+- write the routes in our express server(in a controller) that will 
+handle req/res to authentication(/login, /register)
