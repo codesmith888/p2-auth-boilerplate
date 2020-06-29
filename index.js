@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(helmet());
-app.use(flash());
+
 
 //Routes
 app.get('/', ((req, res) => {
