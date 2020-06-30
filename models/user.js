@@ -57,6 +57,8 @@ module.exports = function(sequelize, DataTypes) {
     delete userData.password;
     return userData;
   }
+
+  return user;
 };
 
 //take inputed password and compare to hashed password in user table 
