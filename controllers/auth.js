@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models');
 //import db  
 const flash = require('flash');
-const passport;
+const passport = require('../config/ppConfig');
 
 
 //register get route
@@ -38,7 +38,7 @@ router.post('/register', function(req, res) {
 })
 //login get route
 router.get('/login', function(req, res) {
-  res.render('/auth/login');
+  res.render('auth/login');
 })
 //login post route
 //TODO: pass next param to function
