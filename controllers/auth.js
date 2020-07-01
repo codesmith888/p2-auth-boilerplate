@@ -49,13 +49,12 @@ router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(error, user, info) {
     if (!user) {
       req.flash('error', 'Invalid username and/or password');
-      req.session.save(function() {
-        return res.redirect('/auth/login');
-      });
-  }
+      return res.redirect('/auth/login');
+    }
     if (error) {
       return next(error);
     }
+    
     req.login(user, function(error) {
       //if error move to error
       if (error) next(error);
