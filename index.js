@@ -5,7 +5,7 @@ const ejsLayouts = require('express-ejs-layouts');
 //add passport, and custom middleware, sequelize sessions
 const helmet = require('helmet');
 const session = require('express-session');
-const flash = require('flash');
+const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const db = require('./models');
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -41,7 +41,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use(function(req, res, next) {
-  res.locals.alert = req.flash();
+  res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
 
   next();
